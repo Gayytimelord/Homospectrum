@@ -11,8 +11,18 @@
 			color: White;
 		}
 	</style>
+
+	<script>
+	setInterval(function script(){
+		const randomColour = Math.floor(Math.random()*16777215).toString(16);
+		document.body.style.titlerainbow = "#" + randomColour;
+	},500)
+</script>
 </head>
 <body>
-<h1>Heyy :3</h1>
+<h1>Hey! Welcome to... </h1>
+<br>
+<h1 id="titlerainbow">THE HOMOSPECTRUM!!!!</h1>
+<h3>(waow)</h3>
 </body>
 </html>
