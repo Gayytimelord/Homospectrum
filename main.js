@@ -1,5 +1,6 @@
 var hundo = 0
 var hex = 0
+var invertedHex = 0
 
 document.getElementById("yourColour").style.opacity = 0
 
@@ -65,33 +66,34 @@ function genColour(){
     if (hundo === 0)
 	    {
 	    //I HATE JAVASCRIPT WHY IS THE ANSWER MULTIPLYING BY ONE WTF
-	    var rHex = document.getElementById("red").value * 1
-     	var rHex = rHex.toString(16).padStart(2, "0"); 
-     	var gHex = document.getElementById("green").value * 1
-     	var gHex = gHex.toString(16).padStart(2, "0"); 
-     	var bHex = document.getElementById("blue").value * 1
-     	var bHex = bHex.toString(16).padStart(2, "0");
-
+	    var r = document.getElementById("red").value * 1
+        var b = document.getElementById("blue").value * 1
+        var g = document.getElementById("green").value * 1
     }
     else{
-	    var rHex = Math.round(document.getElementById("red").value * 2.25)
-	    var rHex = rHex.toString(16).padStart(2, "0");
-	    var gHex = Math.round(document.getElementById("green").value * 2.25)
-	    var gHex = gHex.toString(16).padStart(2, "0");
-	    var bHex = Math.round(document.getElementById("blue").value * 2.25)
-	    var bHex = bHex.toString(16).padStart(2, "0");
+	    var r = Math.round(document.getElementById("red").value * 2.25)
+        var g = Math.round(document.getElementById("green").value * 2.25)
+        var b = Math.round(document.getElementById("blue").value * 2.25)
     }
 
-    hex = "#" + rHex + gHex + bHex
-    document.getElementById("yourColour").style.opacity = 100
-    document.getElementById("colour").innerText = hex
-    document.getElementById("half").style.background = hex
+    var mr = 255 - r;
+    var mg = 255 - g;
+    var mb = 255 - b;
+
+    var hex = "#" + r.toString(16).padStart(2, "0") + g.toString(16).padStart(2, "0") + b.toString(16).padStart(2, "0");
+    var invertedHex = "#" + mr.toString(16).padStart(2, "0") + mg.toString(16).padStart(2, "0") + mb.toString(16).padStart(2, "0");
+
+    console.log(invertedHex)
+
+    document.getElementById("yourColour").style.opacity = 100;
+    document.getElementById("yourColour").style.color = invertedHex;
+    document.getElementById("colour").innerText = hex;
+    document.getElementById("half").style.background = hex;
 
 }
-
 
 //copy to clipboard
 
 function copy(){
-     navigator.clipboard.writeText(hex)
+     navigator.clipboard.writeText(hex);
 }
