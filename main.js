@@ -60,7 +60,7 @@ radioButtons.forEach(function(radioButton) {
 });
 
 
-//generate the colour!1
+//generate the colour!1!!111!
 function genColour(){
 
     if (hundo === 0)
@@ -82,8 +82,6 @@ function genColour(){
 
     var hex = "#" + r.toString(16).padStart(2, "0") + g.toString(16).padStart(2, "0") + b.toString(16).padStart(2, "0");
     var invertedHex = "#" + mr.toString(16).padStart(2, "0") + mg.toString(16).padStart(2, "0") + mb.toString(16).padStart(2, "0");
-
-    console.log(invertedHex)
 
     document.getElementById("yourColour").style.opacity = 100;
     document.getElementById("yourColour").style.color = invertedHex;
