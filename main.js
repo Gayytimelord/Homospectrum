@@ -84,8 +84,8 @@ function genColour(){
 
     hex = "#" + rHex + gHex + bHex
     document.getElementById("yourColour").style.opacity = 100
-    document.getElementById("yourColour").style.color = hex
     document.getElementById("colour").innerText = hex
+    document.getElementById("half").style.background = hex
 
 }
 
@@ -94,9 +94,4 @@ function genColour(){
 
 function copy(){
      navigator.clipboard.writeText(hex)
-}
-
-//changes background
-function background() {
-    document.body.style.background = hex
 }
