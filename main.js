@@ -1,4 +1,8 @@
 var hundo = 0
+var hex = 0
+
+document.getElementById("yourColour").style.opacity = 0
+
 
 // multicoloured text 
 setInterval(function colourswitch(){ const randomColour =
@@ -56,8 +60,6 @@ radioButtons.forEach(function(radioButton) {
 
 
 //generate the colour!1
-
-//update slider maximums
 function genColour(){
 
     if (hundo === 0)
@@ -78,10 +80,23 @@ function genColour(){
 	    var gHex = gHex.toString(16).padStart(2, "0");
 	    var bHex = Math.round(document.getElementById("blue").value * 2.25)
 	    var bHex = bHex.toString(16).padStart(2, "0");
-	    console.log(rHex, gHex, bHex);
-
     }
 
-    document.body.style.background = "#" + rHex + gHex + bHex;
-    console.log("#" + rHex + gHex + bHex	)
+    hex = "#" + rHex + gHex + bHex
+    document.getElementById("yourColour").style.opacity = 100
+    document.getElementById("yourColour").style.color = hex
+    document.getElementById("colour").innerText = hex
+
+}
+
+
+//copy to clipboard
+
+function copy(){
+     navigator.clipboard.writeText(hex)
+}
+
+//changes background
+function background() {
+    document.body.style.background = hex
 }

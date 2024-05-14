@@ -16,6 +16,19 @@
 			padding-left: auto;
 
 		}
+
+		#help{
+			position: absolute;
+			bottom: 0;
+			right: 1vw;
+		}
+
+		#yourColour{
+			position: absolute;
+			right: 17vw;
+			top: 35vh;
+			scale: 1.3;
+		}
 	</style>
 	</head> 
 	<body> 
@@ -47,6 +60,7 @@
 			Give it a whirl:	
 		</h2>
 		<br>
+
 		<form id="colourForm" onsubmit="event.preventDefault();">
 			<b><p>As promised- first off. Do you want to use 0-100 (less control, more intuitive) or 0-255 (vice versa)?</p></b>
 			<input type="radio" value = 100 name="100255" checked>
@@ -71,7 +85,20 @@
 			<br><br>
 			<button onclick="genColour()">Submit!</button>
 	  	</form>
-
+	
+	<div id=yourColour>
+		<h1>Your colour is:</h1>
+		<h1><span id = colour></span></h1>
+		<button onclick="copy()">Copy to clipboard</button>
+		<br>
+		<br>
+		<button onclick="background()">Change background</button>
+	</div>
+		
+	</div>  	
+	<div id="help">
+		<h6>this has been the single most time consuming shitpost i've ever made help</h6>
+	</div>
 	<script type="text/javascript" src="main.js"></script>
 	</body> 
 </html>
