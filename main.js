@@ -71,9 +71,9 @@ function genColour(){
         var g = document.getElementById("green").value * 1
     }
     else{
-	    var r = Math.round(document.getElementById("red").value * 2.25)
-        var g = Math.round(document.getElementById("green").value * 2.25)
-        var b = Math.round(document.getElementById("blue").value * 2.25)
+	    var r = Math.round(document.getElementById("red").value * 2.55)
+        var g = Math.round(document.getElementById("green").value * 2.55)
+        var b = Math.round(document.getElementById("blue").value * 2.55)
     }
 
     var mr = 255 - r;
@@ -87,6 +87,11 @@ function genColour(){
     document.getElementById("yourColour").style.color = invertedHex;
     document.getElementById("colour").innerText = hex;
     document.getElementById("half").style.background = hex;
+
+    if (window.screen.width <= 1570) {
+        document.getElementById("half").style.position ="relative";
+        window.scrollBy(0, 30 * parseFloat(getComputedStyle(document.documentElement).fontSize));
+    }
 
 }
 
