@@ -1,4 +1,39 @@
+H1{
+	font-size: 4ch;
+}
+
+H2{
+	font-size: 3ch;
+}
+
+H3{
+	font-size: 2ch;
+}
+
+label,p{
+	font-size: 1.7ch;
+}
+
+H4{
+	font-size: 1ch;
+}
+
+H5{
+	font-size: 0.9ch;
+}
+
+H6{
+	font-size: 0.8ch;
+}
+
+br{
+	height: 0.3ch;
+}
+
+
+
 body {
+	height: 97%;
 	background-color: #17382D;
 	font-family: Arial;
 	color: White;
@@ -9,7 +44,7 @@ body {
 
 #help{
 	position: absolute;
-	bottom: 10px;
+	bottom: 0;
 	right: 10px;
 	padding: 0;
 	margin: 0;
@@ -30,6 +65,3 @@ body {
 	width: 40vw;
 }
 
-#colourForm {
-	margin-bottom: 0;
-}
