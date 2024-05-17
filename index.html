@@ -36,9 +36,9 @@
 		</h3>
 		<h5>(addendum, the background is mine!)</h5>
 		<br>
-		<h2>
+		<h2 title="to clarify- 0 - 255 is small to large. e.g no body hair - gorilla ">
 			Give it a whirl:	
-		</h3>
+		</h2>
 
 		<form id="colourForm" onsubmit="event.preventDefault();">
 			<b><p>As promised- first off. Do you want to use 0-100 (less control, more intuitive) or 0-255 (vice versa)?</p></b>
@@ -50,17 +50,17 @@
 			<label for="red">Body hair | Value:</label>
 			<span id="rednum">0</span>
 			<br>
-			<input type="range" name="red" min="0" max="255" id="red" value="0">
+			<input type="range" name="red" min="0" max="100" id="red" value="0">
 			<br><br>
 			<label for="green">Frame (Build) | Value:</label>
 			<span id="greennum">0</span>
 			<br>
-			<input type="range" name="green" min="0" max="255" id="green" value="0">
+			<input type="range" name="green" min="0" max="100" id="green" value="0">
 			<br><br>
 			<label for="blue">Personality (Sub-Dom) | Value:</label>
 			<span id="bluenum">0</span>
 			<br>
-			<input type="range" name="blue" min="0" max="255" id="blue" value="0">
+			<input type="range" name="blue" min="0" max="100" id="blue" value="0">
 			<br><br>
 			<button onclick="genColour()">Submit!</button>
 	  	</form>
@@ -75,11 +75,7 @@
 		</div>
 	</div>
 
-	<!-- this is fucking stupid -->
-	<br><br><br><br><br><br><br><br><br>
-	<!-- no seriously. This. Is. Fucking. Stupid -->
-
-	<div style="position: relative;">
+	<div style="position: relative; bottom: 0;" >
 		<h6 id="help">this has been the single most time consuming shitpost i've ever made help</h6>
 	</div> 
 

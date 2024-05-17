@@ -1,4 +1,4 @@
-var hundo = 0
+var tff = 0
 var hex = 0
 var invertedHex = 0
 
@@ -38,13 +38,13 @@ function changeslidermax() {
     console.log("Selected option: ", selectedOption);
 
     if (selectedOption === "100") {
-    	hundo = 1
+    	tff = 0
         console.log("Updating sliders to 0-100 range.");
         document.getElementById("red").max = 100;
         document.getElementById("green").max = 100;
         document.getElementById("blue").max = 100;
     } else if (selectedOption === "255") {
-    	hundo = 0
+    	tff = 1
         console.log("Updating sliders to 0-255 range.");
         document.getElementById("red").max = 255;
         document.getElementById("green").max = 255;
@@ -63,7 +63,7 @@ radioButtons.forEach(function(radioButton) {
 //generate the colour!1!!111!
 function genColour(){
 
-    if (hundo === 0)
+    if (tff === 0)
 	    {
 	    //I HATE JAVASCRIPT WHY IS THE ANSWER MULTIPLYING BY ONE WTF
 	    var r = document.getElementById("red").value * 1
@@ -89,7 +89,7 @@ function genColour(){
     document.getElementById("half").style.background = hex;
 
     if (window.screen.width <= 1570) {
-        document.getElementById("half").style.position ="relative";
+        document.getElementById("half").style.position = "relative";
         window.scrollBy(0, 30 * parseFloat(getComputedStyle(document.documentElement).fontSize));
     }
 
