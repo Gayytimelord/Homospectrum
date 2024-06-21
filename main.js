@@ -7,15 +7,16 @@ document.getElementById("yourColour").style.opacity = 0
 
 // multicoloured text 
 setInterval(function colourswitch(){ const randomColour =
-Math.floor(Math.random()*16777215).toString
-(16); document.getElementById("titlerainbow").style.color = "#" + randomColour; },300)
+Math.floor(Math.random()*16777215).toString(16);
+document.getElementById("titlerainbow").style.color = "#" + randomColour; },300)
 
 //update slider labels 
 var Rslider = document.getElementById("red");
-var Routput = document.getElementById("rednum");
 var Gslider = document.getElementById("green");
-var Goutput = document.getElementById("greennum");
 var Bslider = document.getElementById("blue");
+
+var Routput = document.getElementById("rednum");
+var Goutput = document.getElementById("greennum");
 var Boutput = document.getElementById("bluenum");
 
 Routput.innerHTML = Rslider.value;
@@ -33,7 +34,6 @@ Bslider.oninput = function() {
 
 //update slider maximums
 function changeslidermax() {
-    console.log("Function changeslidermax() called."); // Check if function is called
     var selectedOption = document.querySelector('input[name="100255"]:checked').value;
     console.log("Selected option: ", selectedOption);
 
@@ -63,17 +63,16 @@ radioButtons.forEach(function(radioButton) {
 //generate the colour!1!!111!
 function genColour(){
 
-    if (tff === 0)
+    if (tff)
 	    {
-	    //I HATE JAVASCRIPT WHY IS THE ANSWER MULTIPLYING BY ONE WTF
-	    var r = document.getElementById("red").value * 1
-        var b = document.getElementById("blue").value * 1
-        var g = document.getElementById("green").value * 1
+	    var r = Math.round(document.getElementById("red").value)
+        var g = Math.round(document.getElementById("green").value)
+        var b = Math.round(document.getElementById("blue").value)
     }
     else{
 	    var r = Math.round(document.getElementById("red").value * 2.55)
-        var g = Math.round(document.getElementById("green").value * 2.55)
         var b = Math.round(document.getElementById("blue").value * 2.55)
+        var g = Math.round(document.getElementById("green").value * 2.55)
     }
 
     var mr = 255 - r;
